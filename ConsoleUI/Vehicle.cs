@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ConsoleUI
 {
     /*
-           * Create an abstract class called Vehicle
+           * Create an abstract class called Vehicle * Done
            * The vehicle class shall have three string properties Year, Make, and Model
            * Set the defaults to something generic in the Vehicle class
            * Vehicle shall have an abstract method called DriveAbstract with no implementation
@@ -15,9 +15,9 @@ namespace ConsoleUI
            */
     public abstract class Vehicle
     {
-        public string Year { get; set; } = "Default value";
-        public string Make { get; set; } = "Default value";
-        public string Model { get; set; } = "Default value";
+        public string Year { get; set; } = "Something Generic";
+        public string Make { get; set; } = "Something Generic";
+        public string Model { get; set; } = "Something Generic";
 
         public abstract void DriveAbstract();
         public virtual void DriveVirtual()

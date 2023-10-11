@@ -17,45 +17,36 @@ namespace ConsoleUI
 
             #region Vehicles
 
-            /*
-             * Create an abstract class called Vehicle
-             * The vehicle class shall have three string properties Year, Make, and Model
-             * Set the defaults to something generic in the Vehicle class
-             * Vehicle shall have an abstract method called DriveAbstract with no implementation
-             * Vehicle shall have a virtual method called DriveVirtual with a base implementation.
-             */
-
-            /* 
-             * Now create 2 non-abstract classes: Car and Motorcycle, that inherit from Vehicle
-             * Add a distict property in the 2 derived classes such as HasTrunk for Car and HasSideCart for Motorcycle
-             * Provide the implementations for the abstract methods
-             * Only in the Motorcycle class will you override the virtual drive method
-            */
+           
+           
 
             // Create a list of Vehicle called vehicles
             var vehicles = new List<Vehicle>();
 
-            /*
+            /* Done
              * Create 4 instances: 1 Car, 1 Motorcycle, and then 2 instances of type Vehicle (use explicit typing) but use constuctors from derived classes
-             * 
+             * Done
              * Set the properties with object initializer syntax
              */
             var car1 = new Car()
+          
             {
                 HasTrunk = true,
                 Year = "2017",
                 Make = "Ford",
-                Model = "GT"
+                Model = "GT"              
             };
+
             var motorcycle1 = new Motorcycle()
             {
-                HasSideCart = true,
+                HasSaddlebags = false,
                 Year = "2023",
                 Make = "Suzuki",
                 Model = "GXR"
             };
             Vehicle vehicle1 = new Car()
             {
+                HasTrunk = true,
                 Year = "2023",
                 Make = "Maserati",
                 Model = "MC20",
@@ -64,9 +55,10 @@ namespace ConsoleUI
             Vehicle vehicle2 = new Motorcycle()
 
             {
+                HasSaddlebags = true,
                 Year = "2014",
                 Make = "Harley Davidson",
-                Model = "FLHX"
+                Model = "FLHXS"
             };
 
 
@@ -84,15 +76,27 @@ namespace ConsoleUI
                 Console.WriteLine($"Year: {vehicle.Year}");
                 Console.WriteLine($"Make: {vehicle.Make}");
                 Console.WriteLine($"Model: {vehicle.Model}");
-               
+                if (vehicle is Car car && car.HasTrunk)
+                {
+                    Console.WriteLine($"This {car.Model} has a trunk.");
+                    
+                }
+                else if (vehicle is Motorcycle motorcycle && motorcycle.HasSaddlebags)
+                {
+                    Console.WriteLine($"This {motorcycle.Model} has saddlebags.");
+                }
+
                 vehicle.DriveVirtual();
                 vehicle.DriveAbstract();
                 Console.WriteLine();
             }
-            // Call each of the drive methods for one car and one motorcycle
+            
+            // Call each of the drive methods for one car and one motorcycle *Done
 
-            #endregion            
+            #endregion  
+            // Why can't I just delete end region and the readline?
             Console.ReadLine();
         }
+
     }
 }
